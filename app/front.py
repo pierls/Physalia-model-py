@@ -18,6 +18,7 @@ class Front(object):
         self.values["F"]      = 0
         self.values["α"]      = 0
         self.values["PO"]     = 0
+        self.values["results"] = []
 
     def render(self):
         dpg.create_context()
@@ -26,6 +27,17 @@ class Front(object):
             label = dpg.get_item_label(sender)
             print(label + " : "+str(a))
             self.values["label"] = a
+
+            self.values["results"] = compute(PO =   self.values["PO"],
+                                             a=     self.values["a"],
+                                             b=     self.values["b"],
+                                             d=     self.values["d"],
+                                             Sp=    self.values["Sp"],
+                                             Q=     self.values["Q"],
+                                             Sm=    self.values["Sm"],
+                                             F=     self.values["F"],
+                                             α=     self.values["α"],
+                                             )
 
         dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
         dpg.setup_dearpygui()
@@ -67,7 +79,10 @@ class Front(object):
                 
 
 
-                column_2 = dpg.add_table_column()
+                dpg.add_table_column()
+
+                with dpg.table_row():
+
 
         
         #dpg.set_primary_window("Primary Window", True)
