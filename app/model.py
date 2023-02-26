@@ -18,6 +18,9 @@ def compute(PO, Sp, d, b, Q, a, Sm, f):
     polype.append(PO)
     P1 = PO
     for annee in range(annee_iteree): # boucle pour définir P2 en fonction de P1
+        if(P1 >100000000): # Security if the function goes too high
+            pass
         polype.append(model(P1, Sp, d, b, Q, a, Sm, f))
         P1 = model(P1, Sp, d, b, Q, a, Sm, f)
+
   
