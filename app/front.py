@@ -1,4 +1,5 @@
 import dearpygui.dearpygui as dpg
+from numpy import max
 from model import compute
 
 
@@ -22,7 +23,7 @@ class Front(object):
         self.values["results"] = [0]
 
     def plot(self):
-        with dpg.plot(label="Plot", height=400, width=400):
+        with dpg.plot(label="", height=400, width=400):
             temp = []
             for i in range(self.values["years"]):
                 temp.append(i)
@@ -30,7 +31,7 @@ class Front(object):
             dpg.add_plot_legend()
 
             # REQUIRED: create x and y axes
-            dpg.add_plot_axis(dpg.mvXAxis, label="years")
+            dpg.add_plot_axis(dpg.mvXAxis, label="years", tag="x_axis")
             dpg.add_plot_axis(dpg.mvYAxis, label="population", tag="y_axis")
 
             # series belong to a y axis
@@ -44,6 +45,8 @@ class Front(object):
         print(str(self.values))
         print("results : " +str(self.values["results"]))
         dpg.set_value('series', [temp, self.values["results"]])
+        dpg.set_axis_limits(axis = "y_axis",ymax=max(self.values["results"]), ymin=0)
+        dpg.set_axis_limits(axis = "x_axis", ymax=self.values["years"], ymin = 0)
 
     def render(self):
         dpg.create_context()
@@ -86,6 +89,7 @@ class Front(object):
                 
                 with dpg.table_row():
                     dpg.add_slider_float(label="a",default_value=0,callback=print_value, max_value=1)
+                    self.plot()
 
                 with dpg.table_row():
                     dpg.add_slider_float(label="b",default_value=0,callback=print_value, max_value=1)
@@ -117,8 +121,7 @@ class Front(object):
 
                 dpg.add_table_column()
 
-                with dpg.table_row():
-                    self.plot()
+                    
 
 
         
