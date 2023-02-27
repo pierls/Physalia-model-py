@@ -9,7 +9,7 @@ from model import compute
 class Front(object):
     def __init__(self):
         self.values = {}
-        self.values["a"]     = 0
+        self.values["a"]      = 0
         self.values["b"]      = 0
         self.values["Sp"]     = 0
         self.values["d"]      = 0
@@ -41,8 +41,8 @@ class Front(object):
         for i in range(self.values["years"]):
             temp.append(i)
 
-        print("temp : "+temp)
-        print("results : " +self.values["results"])
+        print(str(self.values))
+        print("results : " +str(self.values["results"]))
         dpg.set_value('series', [temp, self.values["results"]])
 
     def render(self):
@@ -51,7 +51,7 @@ class Front(object):
             a = dpg.get_value(sender)
             label = dpg.get_item_label(sender)
             print(label + " : "+str(a))
-            self.values["label"] = a
+            self.values[label] = a
 
             self.values["results"] = compute(PO =   self.values["PO"],
                                              a=     self.values["a"],
@@ -62,8 +62,8 @@ class Front(object):
                                              Sm=    self.values["Sm"],
                                              f=     self.values["f"],
                                              α=     self.values["α"],
+                                             years= self.values["years"]
                                              )
-            print(self.values["results"])
             self.update_plot()
 
         dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
@@ -81,6 +81,8 @@ class Front(object):
                 with dpg.table_row():
                     #function display here
                     dpg.add_text(f"Function should be \ndisplayed here")
+
+                
                 
                 with dpg.table_row():
                     dpg.add_slider_float(label="a",default_value=0,callback=print_value, max_value=1)
