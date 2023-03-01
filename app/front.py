@@ -38,14 +38,14 @@ class Front(object):
             dpg.add_line_series(temp, self.values["results"], label="population by years", parent="y_axis",tag="series")
 
     def update_plot(self):
-        temp = []
+        temp = [0]
         for i in range(self.values["years"]):
-            temp.append(i)
+            temp.append(i+1)
 
         print(str(self.values))
         print("results : " +str(self.values["results"]))
         dpg.set_value('series', [temp, self.values["results"]])
-        dpg.set_axis_limits(axis = "y_axis",ymax=max(self.values["results"]), ymin=0)
+        dpg.set_axis_limits(axis = "y_axis",ymax=max(self.values["results"])+10, ymin=0)
         dpg.set_axis_limits(axis = "x_axis", ymax=self.values["years"], ymin = 0)
 
     def render(self):
@@ -73,55 +73,25 @@ class Front(object):
         dpg.setup_dearpygui()
 
 
-        with dpg.window(tag="Primary Window"):
+        with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
-
-                # use add_table_column to add columns to the table,
-                # table columns use child slot 0
-                dpg.add_table_column()
-                
-
-                with dpg.table_row():
-                    #function display here
+             dpg.add_table_column()
+             with dpg.table_row():
+                with dpg.window(tag="Sliders"):
                     dpg.add_text(f"Function should be \ndisplayed here")
-
-                
-                
-                with dpg.table_row():
                     dpg.add_slider_float(label="a",default_value=0,callback=print_value, max_value=1)
-                    self.plot()
-
-                with dpg.table_row():
                     dpg.add_slider_float(label="b",default_value=0,callback=print_value, max_value=1)
-
-                with dpg.table_row():
                     dpg.add_slider_float(label="Sp",default_value=0,callback=print_value, max_value=1)
-                
-                with dpg.table_row():
                     dpg.add_slider_float(label="d",default_value=0,callback=print_value, max_value=1)
-                
-                with dpg.table_row():
                     dpg.add_slider_float(label="Sm",default_value=0,callback=print_value, max_value=1)
-                
-                with dpg.table_row():
                     dpg.add_slider_float(label="f",default_value=0,callback=print_value, max_value=1)
-                
-                with dpg.table_row():
                     dpg.add_slider_float(label="α",default_value=0,callback=print_value, max_value=1)
-
-                with dpg.table_row():
                     dpg.add_input_int(label="Q",callback=print_value)
-
-                with dpg.table_row():
                     dpg.add_input_int(label="PO",callback=print_value)
-                
-                with dpg.table_row():
                     dpg.add_input_int(label="years",callback=print_value)
+                self.plot()
 
-
-                dpg.add_table_column()
-
-                    
+               
 
 
         
