@@ -24,9 +24,9 @@ class Front(object):
 
     def plot(self):
         with dpg.plot(label="", height=400, width=400):
-            temp = []
+            valeurs = []
             for i in range(self.values["Période prévisionelle"]):
-                temp.append(i)
+                valeurs.append(i)
             # optionally create legend
             dpg.add_plot_legend()
 
@@ -35,16 +35,16 @@ class Front(object):
             dpg.add_plot_axis(dpg.mvYAxis, label="population", tag="y_axis")
 
             # series belong to a y axis
-            dpg.add_line_series(temp, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
+            dpg.add_line_series(valeurs, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
 
     def update_plot(self):
-        temp = [0]
+        annees = [0]
         for i in range(self.values["Période prévisionelle"]):
-            temp.append(i+1)
+            annees.append(i+1)
 
         print(str(self.values))
         print("results : " +str(self.values["results"]))
-        dpg.set_value('series', [temp, self.values["results"]])
+        dpg.set_value('series', [annees, self.values["results"]])
         dpg.set_axis_limits(axis = "y_axis",ymax=max(self.values["results"])+10, ymin=0)
         dpg.set_axis_limits(axis = "x_axis", ymax=self.values["Période prévisionelle"], ymin = 0)
 
