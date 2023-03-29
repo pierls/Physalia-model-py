@@ -10,23 +10,23 @@ from model import compute
 class Front(object):
     def __init__(self):
         self.values = {}
-        self.values["Taux de rencontre méduse / prédateur"]      = 0
-        self.values["Taux de formation des supra-organismes"]      = 0
-        self.values["Taux de survie polype"]     = 0
-        self.values["Taux de scissiparité par polype"]      = 0
-        self.values["Quantité de prédateur initial"]      = 0
-        self.values["Taux de survie par méduse"]     = 0
-        self.values["Taux de fécondation par méduse"]      = 0
-        self.values["Taux d'impact compétition intra-spécifique"]      = 0
-        self.values["Quantité de polype initial"]     = 0
-        self.values["Période prévisionelle"]  = 1
-        self.values["results"] = [0]
+        self.values["Taux de rencontre méduse / prédateur"]             = 0
+        self.values["Taux de formation des supra-organismes"]           = 0
+        self.values["Taux de survie polype"]                            = 0
+        self.values["Taux de scissiparité par polype"]                  = 0
+        self.values["Quantité de prédateur initial"]                    = 0
+        self.values["Taux de survie par méduse"]                        = 0
+        self.values["Taux de fécondation par méduse"]                   = 0
+        self.values["Taux d'impact compétition intra-spécifique"]       = 0
+        self.values["Quantité de polype initial"]                       = 0
+        self.values["Période prévisionelle"]                            = 1
+        self.values["results"]                                          = [0]
 
     def plot(self):
         with dpg.plot(label="", height=400, width=400):
-            temp = []
+            valeurs = []
             for i in range(self.values["Période prévisionelle"]):
-                temp.append(i)
+                valeurs.append(i)
             # optionally create legend
             dpg.add_plot_legend()
 
@@ -35,16 +35,16 @@ class Front(object):
             dpg.add_plot_axis(dpg.mvYAxis, label="population", tag="y_axis")
 
             # series belong to a y axis
-            dpg.add_line_series(temp, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
+            dpg.add_line_series(valeurs, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
 
     def update_plot(self):
-        temp = [0]
+        annees = [0]
         for i in range(self.values["Période prévisionelle"]):
-            temp.append(i+1)
+            annees.append(i+1)
 
         print(str(self.values))
         print("results : " +str(self.values["results"]))
-        dpg.set_value('series', [temp, self.values["results"]])
+        dpg.set_value('series', [annees, self.values["results"]])
         dpg.set_axis_limits(axis = "y_axis",ymax=max(self.values["results"])+10, ymin=0)
         dpg.set_axis_limits(axis = "x_axis", ymax=self.values["Période prévisionelle"], ymin = 0)
 
@@ -71,7 +71,7 @@ class Front(object):
 
         dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
         dpg.setup_dearpygui()
-
+        # Test
 
         with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
