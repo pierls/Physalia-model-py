@@ -10,17 +10,17 @@ from model import compute
 class Front(object):
     def __init__(self):
         self.values = {}
-        self.values["Taux de rencontre méduse / prédateur"]      = 0
-        self.values["Taux de formation des supra-organismes"]      = 0
-        self.values["Taux de survie polype"]     = 0
-        self.values["Taux de scissiparité par polype"]      = 0
-        self.values["Quantité de prédateur initial"]      = 0
-        self.values["Taux de survie par méduse"]     = 0
-        self.values["Taux de fécondation par méduse"]      = 0
-        self.values["Taux d'impact compétition intra-spécifique"]      = 0
-        self.values["Quantité de polype initial"]     = 0
-        self.values["Période prévisionelle"]  = 1
-        self.values["results"] = [0]
+        self.values["Taux de rencontre méduse / prédateur"]             = 0
+        self.values["Taux de formation des supra-organismes"]           = 0
+        self.values["Taux de survie polype"]                            = 0
+        self.values["Taux de scissiparité par polype"]                  = 0
+        self.values["Quantité de prédateur initial"]                    = 0
+        self.values["Taux de survie par méduse"]                        = 0
+        self.values["Taux de fécondation par méduse"]                   = 0
+        self.values["Taux d'impact compétition intra-spécifique"]       = 0
+        self.values["Quantité de polype initial"]                       = 0
+        self.values["Période prévisionelle"]                            = 1
+        self.values["results"]                                          = [0]
 
     def plot(self):
         with dpg.plot(label="", height=400, width=400):
@@ -71,7 +71,7 @@ class Front(object):
 
         dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
         dpg.setup_dearpygui()
-
+        # Test
 
         with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
