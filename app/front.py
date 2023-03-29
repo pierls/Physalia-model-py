@@ -50,6 +50,10 @@ class Front(object):
 
     def render(self):
         dpg.create_context()
+        dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
+        dpg.setup_dearpygui()
+
+
         def print_value(sender):
             a = dpg.get_value(sender)
             label = dpg.get_item_label(sender)
@@ -69,8 +73,7 @@ class Front(object):
                                              )
             self.update_plot()
 
-        dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
-        dpg.setup_dearpygui()
+
         # Test
 
         with dpg.window(tag="Primary Window"):          
