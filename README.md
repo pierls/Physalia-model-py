@@ -9,7 +9,7 @@ Dans le cadre de la matière "Evaluation et sélection de modèle" dirigé par l
 L’équilibre fragile des écosystèmes marins se voit bouleversé par la politique de pêche intensive et non sélective de ces dernières années, ceci ayant pour conséquence la disparition de certaines espèces. De manière générale, l’évolution des écosystèmes tant à avoir plusieurs organismes ayant une même fonction, c’est le principe de redondance fonctionnelle. Grâce à ce principe la disparition d’une espèce n'impactent pas ou très peu l’écosystème, puisque d’autres organismes aux fonctions similaires compenseront cette perte. Cependant la redondance fonctionnelle n’est pas bien établie dans tous les écosystèmes. Physalia physalis est un parfait exemple de ce phénomène, ce cnidaire vivant habituellement dans les eaux tropicales, se retrouvent aujourd’hui à s’échouer sur les côtes Est-Atlantique. Physalia physalis, ou encore appelé la galère portugaise est un supra-organisme produisant des toxines dangereuses pour l’Homme, de ce fait sa présence sur les côtes européennes est un danger pour l’équilibre des écosystèmes déjà présent ainsi que pour le tourisme. Il est de plus en plus fréquent d’en trouver échoué sur les plages françaises dû à l'accentuation de certains courants (notamment le golf stream) provoqué par le dérèglement climatique mais aussi à cause de la surpopulation de cet organisme dans les eaux tropicales. Cette surpopulation est due à la disparition progressive de son unique prédateur : la tortue Caretta caretta, classée comme espèce vulnérable selon le statut de conservation UICN. En effet depuis des années cette tortue est une victime collatérale de la pêche au filet qui s’intensifie dans les régions tropicales et subtropicales. La suppression progressive d’un prédateur permet logiquement une croissance dans la population de sa proie, c’est le cas pour la population de Physalia physalis. Ce document traitera de la problématique suivante : Comment évolue la population de Physalia physalis et qu’elle sera l’impact de la perte progressive de son unique prédateur.
 
 ### Liens vers la production initiale réalisé sous la direction du Pr. Sébastiens Gourbiere
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+https://github.com/pierls/Physalia-model-py/blob/main/Projet%20appliqué%20à%20la%20modélisation%20_%20l’évolution%20démographique%20inquiétante%20de%20Physalia%20physalis%20G.Petit%2C%20I.Salmi%2C%20E.%20Christine%2C%20M.Berges%2C%20A.Reina.pdf
 
 
 
@@ -35,4 +35,4 @@ La composante modèle à initialement était réalisé en R, elle est toujours d
 ### Réalisation 
 Guillaume Petit, aka @logyrave
 ### Reviewer et pair-programmeur
-@pierl
+@pierls
