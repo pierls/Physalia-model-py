@@ -38,7 +38,7 @@ class Front(object):
             # series belong to a y axis
             dpg.add_line_series(valeurs, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
 
-# Actualisation axe x et y respectivement en fonction du nombre d'individus calculés et de la période prévisionelle 
+# Actualisation axe y et x respectivement en fonction du nombre d'individus calculés et de la période prévisionelle 
     def update_plot(self):
         annees = [0]
         for i in range(self.values["Période prévisionelle"]):
@@ -76,7 +76,7 @@ class Front(object):
             self.update_plot()
 
 
-# Création fenêtre du front et des différents sliders
+# Création de l'interface
 
         with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
