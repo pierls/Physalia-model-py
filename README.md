@@ -1,3 +1,5 @@
+<style>body {text-align: justify}</style>
+
 # Projet appliqué à la modélisation : l’évolution démographique inquiétante de Physalia physalis
 
 
