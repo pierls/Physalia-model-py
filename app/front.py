@@ -65,7 +65,7 @@ class Front(object):
             # series belong to a y axis
             dpg.add_line_series(valeurs, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
 
-# Actualisation axe x et y respectivement en fonction du nombre d'individus calculés et de la période prévisionelle 
+# Actualisation axe y et x respectivement en fonction du nombre d'individus calculés et de la période prévisionelle 
     def update_plot(self):
         """This function updates the previously created plot comùponent of the UI, based on
         the new parameters that the user have chosen. It calls the model's ``compute()`` function in order to display proper data.
@@ -111,7 +111,7 @@ class Front(object):
             self.update_plot()
 
 
-# Création fenêtre du front et des différents sliders
+# Création de l'interface
 
         with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
