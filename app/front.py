@@ -6,9 +6,9 @@ from model import compute
 
 
 
-
-class Front(object):
-    def __init__(self):
+# Création dictionnaire de valeurs 
+class Front(object): 
+    def __init__(self):                     
         self.values = {}
         self.values["Taux de rencontre méduse / prédateur"]             = 0
         self.values["Taux de formation des supra-organismes"]           = 0
@@ -22,6 +22,7 @@ class Front(object):
         self.values["Période prévisionelle"]                            = 1
         self.values["results"]                                          = [0]
 
+# Création du plot 
     def plot(self):
         with dpg.plot(label="", height=400, width=400):
             valeurs = []
@@ -37,6 +38,7 @@ class Front(object):
             # series belong to a y axis
             dpg.add_line_series(valeurs, self.values["results"], label="Estimation de la population", parent="y_axis",tag="series")
 
+# Actualisation axe x et y respectivement en fonction du nombre d'individus calculés et de la période prévisionelle 
     def update_plot(self):
         annees = [0]
         for i in range(self.values["Période prévisionelle"]):
@@ -53,11 +55,11 @@ class Front(object):
         dpg.create_viewport(title='Modelisation Population Physalia interactif', width=600, height=600)
         dpg.setup_dearpygui()
 
-
+# Création du lien dictionnaire de valeur / front
         def print_value(sender): #bouton touché --> a, a = self.values(label) --> dit au dictionnaire qu'une valeur a bougé
             a = dpg.get_value(sender)
             label = dpg.get_item_label(sender)
-            print(label + " : "+str(a))
+            print(label + " : "+str(a)) # affichage des valeurs dans le terminal pour debuguer
             self.values[label] = a
 
             self.values["results"] = compute(PO =   self.values["Quantité de polype initial"],
@@ -74,7 +76,7 @@ class Front(object):
             self.update_plot()
 
 
-        # Test
+# Création fenêtre du front et des différents sliders
 
         with dpg.window(tag="Primary Window"):          
             with dpg.table(header_row=False):
