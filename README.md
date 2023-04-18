@@ -14,8 +14,8 @@ L’équilibre fragile des écosystèmes marins se voit bouleversé par la polit
 
 
 ## Partie biologique (réalisé dans le cadre de la matière "Evaluation et sélection de modèle" dispensé au S5)
-<p style="text-align:justifiy;">La partie biologique disponible sur le git n'a pas était modifié depuis son rendu (même si le développement de mon application a permis de mettre en lumière des erreurs).
-Les contributeur de cette partie son (Reina Amandine, Berges Marie, Christine Emma, Salmi Illian, Petit Guillaume).</p>
+La partie biologique disponible sur le git n'a pas était modifié depuis son rendu (même si le développement de mon application a permis de mettre en lumière des erreurs).
+Les contributeur de cette partie son (Reina Amandine, Berges Marie, Christine Emma, Salmi Illian, Petit Guillaume).
 
 ## Partie informatique
 Cette partie à pour but d'aider à visualiser l'impact potentiel de chaques paramètres biologiques sur l'évolution de la population de Physalia Physalis. Elle à était réalisé en python dans le cadre de ma candidature au Master bio-informatique de l'UCBL.
