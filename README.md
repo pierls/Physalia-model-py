@@ -24,14 +24,14 @@ Cette partie à pour but d'aider à visualiser l'impact potentiel de chaques par
 Python 3.10 ou supérieur 
 Librairies DearPyGui & Numpy
 ### quick start 
-l'application est déjà hautement pré-configurée, il suffit simplement de lancé le fichier app.py ce trouvant dans le dossier app, avec la commande "python ./app.py"
+l'application est déjà hautement pré-configurée, il suffit simplement d'executer le fichier app.py ce trouvant dans le dossier app, avec la commande "python ./app.py"
 ### Fonctionnement de l'application 
 Architecture verticale à 3 composantes : 
 #### modèle : modélisation du cycle de vie de Physalia Physalis 
 #### front : interface utilisateur 
 #### app : affichage dynamique des résultats donnés par le modèle 
 ### Pour aller plus loin
-La composante modèle à initialement était réalisé en R, elle est toujours disponible dans le git. 
+La composante "model" a initialement était réalisé en R, elle est toujours disponible sur le git. 
 ### Réalisation 
 Guillaume Petit, aka @logyrave
 ### Reviewer et pair-programmeur
