@@ -12,8 +12,7 @@ def __init__():
     command fo instance.
     """
     print("hello world")
-    app = Front()
-    app.render()
+    app = Front().render()
 
     app.show_viewport()
     app.start_dearpygui()
