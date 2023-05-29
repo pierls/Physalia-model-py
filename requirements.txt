@@ -1,2 +1,2 @@
-dearpygui==1.8.9
+dearpygui==1.9.1
 numpy==1.24.2
