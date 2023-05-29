@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from front import Front
 """This module is the entry point of this application. It basically create a ``Front`` object, and display the IU finally.  
 """
